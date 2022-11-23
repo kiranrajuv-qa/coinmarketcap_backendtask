@@ -9,7 +9,7 @@ import java.util.Properties;
 public class PropertiesUtil {
 	private Properties properties;
 	private final String propertyFilePath = "src//main//resources//";
-	private String url, apiKey, mapApi, priceConvApi;
+	private String url, apiKey, mapApi, priceConvApi, infoApi;
 
 	public PropertiesUtil() {
 		BufferedReader reader = null;
@@ -22,6 +22,7 @@ public class PropertiesUtil {
 				apiKey = properties.getProperty("apiKey");
 				mapApi = properties.getProperty("mapApi");
 				priceConvApi = properties.getProperty("priceConvApi");
+				infoApi = properties.getProperty("infoApi");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -62,5 +63,12 @@ public class PropertiesUtil {
 			return priceConvApi;
 		else
 			throw new RuntimeException("priceConvApi not specified in env.properties file");
+	}
+	
+	public String getInfoApi() {
+		if (infoApi != null)
+			return infoApi;
+		else
+			throw new RuntimeException("infoApi not specified in env.properties file");
 	}
 }
