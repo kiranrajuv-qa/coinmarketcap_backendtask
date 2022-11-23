@@ -11,7 +11,7 @@ import io.cucumber.java.en.Then;
 
 import io.restassured.response.Response;
 
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.hasItem;
 
 import utils.PropertiesUtil;
 import static utils.APIUtils.*;
